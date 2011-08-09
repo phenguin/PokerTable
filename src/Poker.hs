@@ -66,3 +66,6 @@ handStd cs@(y:ys) = hand' profile cs
           otherwise -> g'
           where (g':gs') = concat gs
 
+a = map handStd $ repeat [C Ace Diamonds, C Three Spades, C Jack Clubs, C Queen Hearts, C Four Clubs]
+main = do writeFile "test.txt" $ unlines $ map show $ take 100000 a
+          putStrLn "Done!"
